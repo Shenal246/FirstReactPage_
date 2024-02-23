@@ -23,6 +23,7 @@ form{
 h1{
   color: rgb(45, 45, 170);
   text-align: center;
+  margin: 4px;
 }
 
 button{
@@ -36,6 +37,6 @@ button{
   font-weight: bold;
   font-size: 18px;
   cursor: pointer;
-  margin-top: 15px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }

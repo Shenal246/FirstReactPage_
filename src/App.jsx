@@ -4,7 +4,6 @@ import { useState } from "react";
 
 function App() {
   const [values, setValues] = useState({
-    fullname: "",
     username: "",
     email: "",
     birthday: "",
@@ -15,45 +14,50 @@ function App() {
   const inputs = [
     {
       id: 1,
-      name: "fullname",
-      type: "text",
-      placeholder: "Fullname",
-      label: "Fullname",
-    },
-    {
-      id: 2,
       name: "username",
       type: "text",
       placeholder: "Username",
+      errorMessage:"Username should be 3-16 characters and shouldn't include any special characters",
       label: "Username",
+      pattern: "^[A-Za-z0-9]{3,16}$",
+      required: true,
     },
     {
-      id: 3,
+      id: 2,
       name: "email",
       type: "text",
       placeholder: "Email",
+      errorMessage:"Should be a valid email address",
+      pattern:"^[a-z]{4,20}[@][a-z]{3,8}[.][a-z]{2,7}$",
       label: "Email",
+      required: true,
     },
     {
-      id: 4,
+      id: 3,
       name: "birthday",
-      type: "text",
-      placeholder: "Birthday",
+      type: "date",
+      errorMessage:"",
       label: "Birthday",
     },
     {
-      id: 5,
+      id: 4,
       name: "password",
       type: "password",
       placeholder: "Password",
+      errorMessage:"Password should be 8-20 characters and include numbers and special characters",
+      pattern:"^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[^a-zA-Z0-9\\s]).{8,}$",
       label: "Password",
+      required: true,
     },
     {
-      id: 6,
+      id: 5,
       name: "confirmPassword",
       type: "password",
       placeholder: "Confirm Password",
+      errorMessage:"Passwords don't match",
+      pattern: values.password,
       label: "Confirm Password",
+      required: true,
     },
   ];
 
